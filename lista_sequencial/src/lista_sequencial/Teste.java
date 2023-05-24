@@ -17,7 +17,7 @@ public class Teste {
 //		list.Vizualizar();
 //		System.out.println(list.deletar(1));
 //		list.Vizualizar();
-		ListaDupEncad list = new ListaDupEncad();
+		ListaDupEncad<Integer> list = new ListaDupEncad<>();
 		list.InserirPrim(3);
 		list.InserirPrim(5);
 		list.InserirPrim(7);

@@ -1,15 +1,15 @@
 package lista_sequencial;
 
-public class ListaDupEncad {
-	Node head;
-	Node tail;
+public class ListaDupEncad<T>{
+	Node<T> head;
+	Node<T> tail;
 	int size;
 	
 	public ListaDupEncad() {
 		this.size = 0;
 	}
-	public void InserirPrim(int val) {
-		Node node = new Node(val);
+	public void InserirPrim(T val) {
+		Node<T> node = new Node<>(val);
 		if(size==0) {
 			head = node;
 			tail = node;
@@ -24,23 +24,23 @@ public class ListaDupEncad {
 		head = node;
 		size++;
 	}
-	public Node find(int value) {
-		Node node = head;
+	public Node<T> find(T value) {
+		Node<T> node = head;
 		while(node != null) {
-			if (node.getVal() == value) {
+			if (node.getValue() == value) {
 				return node;
 			}
 			node = node.getNext();
 		}
 		return node;
 	}
-	public void inserir(int val, int after) {
+	public void inserir(T val, T after) {
 		if(size == 0) {
 			InserirPrim(val);
 			return;
 		}
-		Node node = new Node(val);
-		Node p = find(after);
+		Node<T> node = new Node<>(val);
+		Node<T> p = find(after);
 		if(p == null) {
 			System.out.println("não existe!");
 			return;
@@ -55,8 +55,8 @@ public class ListaDupEncad {
 		tail = node;
 	}
 	
-	public void inserirUlt(int val) {
-		Node node = new Node(val);
+	public void inserirUlt(T val) {
+		Node<T> node = new Node<>(val);
 		tail.setNext(node);
 		node.setNext(null);
 		node.setPrev(tail);
@@ -79,8 +79,8 @@ public class ListaDupEncad {
 		head.setPrev(null);
 		size--;
 	}
-	public void deletarPorNome(int value) {
-		Node d = find(value);
+	public void deletarPorNome(T value) {
+		Node<T> d = find(value);
 		if(d==null) {
 			System.out.println("não existe");
 			return;
@@ -114,56 +114,11 @@ public class ListaDupEncad {
 	}
 	
 	public void vizualizar() {
-		Node node = head;
+		Node<T> node = head;
 		while(node != null) {
-			System.out.print(node.getVal() + " --> ");
+			System.out.print(node.getValue() + " --> ");
 			node = node.getNext();
 		}
 		System.out.println("END");
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	private class Node{
-		int val;
-		Node next;
-		Node prev;
-		
-		public int getVal() {
-			return val;
-		}
-		public void setVal(int val) {
-			this.val = val;
-		}
-		public Node getNext() {
-			return next;
-		}
-		public void setNext(Node next) {
-			this.next = next;
-		}
-		public Node getPrev() {
-			return prev;
-		}
-		public void setPrev(Node prev) {
-			this.prev = prev;
-		}
-		public Node(int val) {
-			this.val = val;
-		}
-		public Node(int val, Node next, Node prev) {
-			this.val = val;
-			this.next = next;
-			this.prev = prev;
-		}
-		
 	}
 }
