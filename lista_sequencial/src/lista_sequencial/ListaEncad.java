@@ -110,4 +110,17 @@ public class ListaEncad<T> {
 		}
 		System.out.println("END");
 	}
+
+	public Node<T> getHead() {
+		return head;
+	}
+
+	public Node<T> getTail() {
+		return tail;
+	}
+
+	public int getSize() {
+		return size;
+	}
+	
 }
