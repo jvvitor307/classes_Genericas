@@ -1,4 +1,4 @@
-package lista_sequencial;
+package lista;
 
 public class Node<T> {
 	private T value;
