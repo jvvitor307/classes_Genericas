@@ -1,12 +1,12 @@
 package fila;
-import deletarPrim;
-public class Fila {
+import lista.ListaEncad;
+public class Fila<T> {
     ListaEncad<T> lista = new ListaEncad<>(); 
     public void enqueue(T add){
-        lista.inserirUlt(add);
+        lista.InserirUlt(add);
     }
     public T dequeue(){
-        return lista.deletarPrim();
+        return lista.DeletarPrim();
     }
     public int size(){
         return lista.getSize();
@@ -20,7 +20,7 @@ public class Fila {
         }
     }
     public T front(){
-        return lista.getTail();
+        return lista.getTail().getValue();
     }
     public Fila() {
     }
